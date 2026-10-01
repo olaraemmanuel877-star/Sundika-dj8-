@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sundika DJ8 Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand">SUND﻿IKA DJ8 PRO</div>
+    <div class="centerTitle">PRO INFINITY v8.5</div>
+    <div class="win">—　□　×</div>
+  </header>
+
+  <section class="wave-row">
+    <div class="deck-wave blue">
+      <div class="wave-top"><span id="aTitle">DECK A<br><b>00:00</b><small>5A</small></span><canvas id="waveA"></canvas><span class="stats"><b id="timeA">00:00</b><br><b id="bpmA">128.00</b><small>5A</small></span></div>
+      <div class="wave-bottom"><canvas id="waveA2"></canvas></div>
+    </div>
+    <div class="deck-wave orange">
+      <div class="wave-top"><span id="bTitle">DECK B<br><b>00:00</b><small>5A</small></span><canvas id="waveB"></canvas><span class="stats"><b id="timeB">00:00</b><br><b id="bpmB">128.00</b><small>5A</small></span></div>
+      <div class="wave-bottom"><canvas id="waveB2"></canvas></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="side">
+      <div class="tinyrow"><button class="round">A</button><button class="mini">◀▶</button></div>
+      <div class="jog" id="jogA"><div class="ring"><img src="deck_a_photo.jpg"></div><div class="ticks"></div></div>
+      <div class="pitch"><span>HIGH</span><input id="pitchA" type="range" min="-8" max="8" step=".1" value="0"><span>LOW</span></div>
+      <div class="transport"><button id="playA">▶</button><button id="pauseA">Ⅱ</button><button id="cueA">☷</button></div>
+      <label class="load">BROWSER<input id="fileA" type="file" accept="audio/*"></label>
+    </div>
+
+    <div class="mixer">
+      <div class="channel">
+        <label>HIGH<input id="aHigh" type="range" min="-12" max="12" value="0"></label>
+        <label>MID<input id="aMid" type="range" min="-12" max="12" value="0"></label>
+        <label>LOW<input id="aLow" type="range" min="-12" max="12" value="0"></label>
+      </div>
+      <div class="meters"><div class="meter"><i id="meterL"></i></div><div class="meter"><i id="meterR"></i></div></div>
+      <div class="channel">
+        <label>HIGH<input id="bHigh" type="range" min="-12" max="12" value="0"></label>
+        <label>MID<input id="bMid" type="range" min="-12" max="12" value="0"></label>
+        <label>LOW<input id="bLow" type="range" min="-12" max="12" value="0"></label>
+      </div>
+      <div class="masterBtns"><button id="fxBtn">FX</button><button id="recBtn">● RECORD</button><button id="cueBtn">CUE</button><button id="loopBtn">LOOP</button></div>
+      <div class="xf"><span>CROSSFADER</span><input id="cross" type="range" min="-1" max="1" step=".01" value="0"></div>
+      <div class="xf"><span>MASTER</span><input id="master" type="range" min="0" max="1" step=".01" value=".85"></div>
+    </div>
+
+    <div class="side">
+      <div class="tinyrow"><button class="round">B</button><button class="mini">◀▶</button></div>
+      <div class="jog orangeJog" id="jogB"><div class="ring"><img src="deck_b_photo.jpg"></div><div class="ticks"></div></div>
+      <div class="pitch"><span>HIGH</span><input id="pitchB" type="range" min="-8" max="8" step=".1" value="0"><span>LOW</span></div>
+      <div class="transport"><button id="playB">▶</button><button id="pauseB">Ⅱ</button><button id="cueB">☷</button></div>
+      <label class="load">BROWSER<input id="fileB" type="file" accept="audio/*"></label>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <div class="browser"><button class="folder">📁<br>BROWSER</button><input id="search" placeholder="Search... My Music › Hip Hop › Trap › ..."><div class="tracks" id="tracks"></div></div>
+    <div class="sampler"><button class="samplerHead">▦ SAMPLER</button><div class="pads" id="pads"></div></div>
+  </section>
+
+  <audio id="audioA" crossorigin="anonymous"></audio>
+  <audio id="audioB" crossorigin="anonymous"></audio>
+  <div id="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
